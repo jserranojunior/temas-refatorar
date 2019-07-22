@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/TableExport/5.2.0/js/tableexport.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Base64/1.0.1/base64.min.js"></script>
+
+
+        
+    
+    <title>Hello, world!</title>
+  </head>
+  <body>
+    
+        <input type="button" class="btn btn-success excel btn-sm" onclick="tableToExcel('tabelaprincipal', 'Contas a pagar')" value="Excel">             
+
+    <table id="tabelaprincipal" class="table table-striped" >
+	<thead>			
+		<tr class='warning'>
+			<th>Brasil</th>
+			<th>Population</th>
+			<th>Date</th>
+			<th>%ge</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td>Chinna</td>
+			<td>1,363,480,000</td>
+			<td>March 24, 2014</td>
+			<td>19.1</td>
+		</tr>
+		<tr>
+			<td>India</td>
+			<td>1,241,900,000</td>
+			<td>March 24, 2014</td>
+			<td>17.4</td>
+		</tr>
+		<tr>
+			<td>United States</td>
+			<td>317,746,000</td>
+			<td>March 24, 2014</td>
+			<td>4.44</td>
+		</tr>
+		<tr>
+			<td>Indonesia</td>
+			<td>249,866,000</td>
+			<td>July 1, 2013</td>
+			<td>3.49</td>
+		</tr>
+		<tr>
+			<td>Brazil</td>
+			<td>201,032,714</td>
+			<td>July 1, 2013</td>
+			<td>2.81</td>
+		</tr>
+	</tbody>
+</table> 
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+
+
+<script>
+    
+
+    var tableToExcel = (function() {
+  var uri = 'data:application/vnd.ms-excel;base64,'
+    , template = '<html xmlns:o="urn:schemas-microsoft-com:office:office" xmlns:x="urn:schemas-microsoft-com:office:excel" xmlns="http://www.w3.org/TR/REC-html40"><head><!--[if gte mso 9]><xml><x:ExcelWorkbook><x:ExcelWorksheets><x:ExcelWorksheet><x:Name>{worksheet}</x:Name><x:WorksheetOptions><x:DisplayGridlines/></x:WorksheetOptions></x:ExcelWorksheet></x:ExcelWorksheets></x:ExcelWorkbook></xml><![endif]-->   <meta charset="utf-8"></head><body><table>{table}</table></body></html>'
+    , base64 = function(s) { return window.btoa(unescape(encodeURIComponent(s))) }
+    , format = function(s, c) { return s.replace(/{(\w+)}/g, function(m, p) { return c[p]; }) }
+  return function(table, name) {
+    if (!table.nodeType) table = document.getElementById(table)
+    var ctx = {worksheet: name || 'Worksheet', table: table.innerHTML}
+    // window.location.href = uri + base64(format(template, ctx))
+    var link = document.createElement("a");
+                    link.download = "exportado.xls";
+                    link.href = uri + base64(format(template, ctx));
+                    link.click();
+  }
+})()
+
+
+ 
+    
+    </script>
+
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+  
+
+
+</body>
+</html>
